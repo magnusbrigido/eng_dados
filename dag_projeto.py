@@ -45,7 +45,6 @@ with DAG(
         python_callable = extract_data,
         op_kwargs = {
             'csv_url': 'https://dados.ufrn.br/dataset/554c2d41-cfce-4278-93c6-eb9aa49c5d16/resource/7c88d1ec-3e83-41b3-9487-c5402fb82c6e/download/discentes-2023.csv',
-            # 'file_path' : '/home/magnus/Documentos/airflowengdados/dadosProjeto/',
             }
     )
 
@@ -53,7 +52,6 @@ with DAG(
         task_id = 'tarefa_3',
         python_callable = filter_df,
         op_kwargs = {
-            # 'file_path' : '/home/magnus/Documentos/airflowengdados/dadosProjeto/',
             'key_value': 'tarefa_2',
             'column': 'forma_ingresso',
             'condition': 'SiSU',
@@ -65,7 +63,6 @@ with DAG(
         task_id = 'tarefa_4',
         python_callable = filter_df,
         op_kwargs = {
-            # 'file_path' : '/home/magnus/Documentos/airflowengdados/dadosProjeto/',
             'key_value': 'tarefa_3',
             'column': 'nome_curso',
             'condition': 'ENGENHARIA DE COMPUTAÇÃO',
